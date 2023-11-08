@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Nov-2023 às 13:47
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.2.0
+-- Tempo de geração: 08-Nov-2023 às 12:13
+-- Versão do servidor: 10.4.20-MariaDB
+-- versão do PHP: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,21 +33,7 @@ CREATE TABLE `aluno` (
   `idade` int(11) NOT NULL,
   `cpf` int(11) NOT NULL,
   `escolaridade` varchar(55) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `curso`
---
-
-CREATE TABLE `curso` (
-  `codigo` int(11) NOT NULL,
-  `nome` varchar(100) NOT NULL,
-  `descricao` varchar(200) NOT NULL,
-  `area` varchar(30) NOT NULL,
-  `carga_horaria` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Índices para tabelas despejadas
@@ -61,12 +47,6 @@ ALTER TABLE `aluno`
   ADD UNIQUE KEY `cpf` (`cpf`);
 
 --
--- Índices para tabela `curso`
---
-ALTER TABLE `curso`
-  ADD PRIMARY KEY (`codigo`);
-
---
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -74,7 +54,7 @@ ALTER TABLE `curso`
 -- AUTO_INCREMENT de tabela `aluno`
 --
 ALTER TABLE `aluno`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
