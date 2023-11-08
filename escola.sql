@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Out-2023 às 12:41
+-- Tempo de geração: 07-Nov-2023 às 13:47
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -29,23 +29,25 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `aluno` (
   `codigo` int(11) NOT NULL,
-  `nome` varchar(55) NOT NULL,
+  `nome_al` varchar(55) NOT NULL,
   `idade` int(11) NOT NULL,
   `cpf` int(11) NOT NULL,
   `escolaridade` varchar(55) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+-- --------------------------------------------------------
+
 --
--- Extraindo dados da tabela `aluno`
+-- Estrutura da tabela `curso`
 --
 
-INSERT INTO `aluno` (`codigo`, `nome`, `idade`, `cpf`, `escolaridade`) VALUES
-(1, 'Santana', 16, 2147483647, 'Segundo Ano MÃ©dio'),
-(5, 'Santana', 16, 123456789, 'Medio'),
-(7, 'kjfjhk', 16, 1234567890, 'Medio'),
-(10, 'kjfjhkmngxfhgf', 5, 123654789, 'maternal'),
-(11, 'kjfjhkmngxfhgf', 5, 1236547895, 'maternal'),
-(13, 'Santana', 16, 154154154, 'Segundo Ano MÃ©dio');
+CREATE TABLE `curso` (
+  `codigo` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `descricao` varchar(200) NOT NULL,
+  `area` varchar(30) NOT NULL,
+  `carga_horaria` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Índices para tabelas despejadas
@@ -59,6 +61,12 @@ ALTER TABLE `aluno`
   ADD UNIQUE KEY `cpf` (`cpf`);
 
 --
+-- Índices para tabela `curso`
+--
+ALTER TABLE `curso`
+  ADD PRIMARY KEY (`codigo`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -66,7 +74,7 @@ ALTER TABLE `aluno`
 -- AUTO_INCREMENT de tabela `aluno`
 --
 ALTER TABLE `aluno`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

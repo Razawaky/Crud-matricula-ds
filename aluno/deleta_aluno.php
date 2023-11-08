@@ -1,6 +1,6 @@
 <?php
 
-include 'conexao.php';
+include '../conexao.php';
 
 $codigo = $_GET['codigo'];
 $consulta = "DELETE FROM aluno WHERE codigo = $codigo";
